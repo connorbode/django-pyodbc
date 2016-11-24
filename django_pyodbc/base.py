@@ -102,6 +102,7 @@ from django_pyodbc.client import DatabaseClient
 from django_pyodbc.compat import binary_type, text_type, timezone
 from django_pyodbc.creation import DatabaseCreation
 from django_pyodbc.introspection import DatabaseIntrospection
+from django_pyodbc.schema import DatabaseSchemaEditor
 
 DatabaseError = Database.Error
 IntegrityError = Database.IntegrityError
@@ -139,6 +140,7 @@ class DatabaseWrapper(BaseDatabaseWrapper):
     datefirst = 7
     Database = Database
     limit_table_list = False
+    SchemaEditorClass = DatabaseSchemaEditor
 
     # Collations:       http://msdn2.microsoft.com/en-us/library/ms184391.aspx
     #                   http://msdn2.microsoft.com/en-us/library/ms179886.aspx
